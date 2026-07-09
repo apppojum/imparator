@@ -71,6 +71,11 @@
   .trust b{color:var(--ink)}
   .stars{color:#f5a623;letter-spacing:2px}
 
+  .hero-media{background:var(--ink);border-radius:20px;overflow:hidden;position:relative;aspect-ratio:3/4;max-height:540px}
+  .hero-media video{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-media .hint{position:absolute;left:0;right:0;bottom:14px;text-align:center;color:rgba(255,255,255,.6);font-size:.78rem;letter-spacing:.05em;pointer-events:none}
+  @media(prefers-reduced-motion:reduce){.hero-media .hint{display:none}}
+
   .hero-card{background:var(--ink);border-radius:20px;padding:34px 30px;color:#fff;position:relative;overflow:hidden}
   .hero-card::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(29,86,214,.55),transparent 70%)}
   .hero-card h3{font-size:1.15rem;font-weight:700;margin-bottom:18px;position:relative;z-index:1}
@@ -192,15 +197,9 @@
         <span><b>21:00</b>'a kadar açık</span>
       </div>
     </div>
-    <div class="hero-card">
-      <h3>Ortalama tamir süreleri</h3>
-      <ul>
-        <li><span>Ekran değişimi</span><span>1 saat</span></li>
-        <li><span>Batarya değişimi</span><span>30-45 dk</span></li>
-        <li><span>Şarj soketi</span><span>1 saat</span></li>
-        <li><span>Kamera değişimi</span><span>1 saat</span></li>
-        <li><span>Anakart onarımı</span><span>1-3 gün</span></li>
-      </ul>
+    <div class="hero-media">
+      <video id="heroVid" src="telefon.mp4" muted playsinline preload="auto" aria-label="Katmanlarına ayrılan telefon animasyonu"></video>
+      <div class="hint">Kaydırdıkça telefon parçalarına ayrılır</div>
     </div>
   </div>
 </section>
@@ -378,5 +377,43 @@
   <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.66 15L2 22l5.16-1.32A10 10 0 1 0 12 2Zm5.46 14.11c-.23.65-1.35 1.24-1.86 1.28-.5.04-.97.22-3.27-.68-2.77-1.09-4.52-3.9-4.66-4.08-.13-.18-1.11-1.47-1.11-2.8 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.23.55.78 1.89.85 2.03.07.13.11.29.02.47-.08.18-.13.29-.25.45l-.38.44c-.13.13-.26.27-.11.53.14.27.64 1.06 1.38 1.72.95.85 1.75 1.11 2 1.24.25.13.4.11.54-.07.14-.18.62-.72.78-.97.16-.25.33-.2.55-.12.23.08 1.44.68 1.69.8.25.13.41.19.47.29.06.11.06.62-.17 1.27Z"/></svg>
 </a>
 
+<script>
+(function(){
+  var v=document.getElementById('heroVid');
+  if(!v) return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var target=0,current=0,ready=false;
+
+  v.addEventListener('loadedmetadata',function(){ready=true;try{v.currentTime=0.01}catch(e){}});
+  v.addEventListener('error',function(){var m=v.closest('.hero-media');if(m)m.style.display='none'});
+
+  // iOS: ilk dokunuşta decode kilidini aç
+  var unlocked=false;
+  function unlock(){
+    if(unlocked)return;unlocked=true;
+    var p=v.play();
+    if(p&&p.then)p.then(function(){v.pause()}).catch(function(){});
+  }
+  window.addEventListener('touchstart',unlock,{once:true,passive:true});
+  window.addEventListener('scroll',unlock,{once:true,passive:true});
+
+  if(reduce)return; // hareket azaltma: ilk kare sabit kalır
+
+  function onScroll(){
+    var range=window.innerHeight*1.4;
+    target=Math.min(1,Math.max(0,window.scrollY/range));
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  (function loop(){
+    requestAnimationFrame(loop);
+    if(!ready||!v.duration)return;
+    current+=(target-current)*0.12;
+    if(Math.abs(target-current)<0.0005)return;
+    try{v.currentTime=current*(v.duration-0.06)}catch(e){}
+  })();
+})();
+</script>
 </body>
 </html>
