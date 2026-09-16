@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>İmparator Cep Servis | Esenler Telefon Tamiri</title>
 <meta name="description" content="Esenler'de premium telefon tamiri: ekran, batarya, şarj soketi, kamera ve anakart onarımı. Çoğu işlem aynı gün. Ücretsiz arıza tespiti. 0533 148 94 34">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#0b1a2f">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"MobilePhoneStore","name":"İmparator Cep Servis","telephone":"+905331489434",
 "address":{"@type":"PostalAddress","streetAddress":"Turgut Reis Mah. Adem Yavuz Cd. No:1/A","addressLocality":"Esenler","addressRegion":"İstanbul","postalCode":"34235","addressCountry":"TR"},
@@ -16,7 +16,7 @@
 :root{
   --black:#000;--ink:#1d1d1f;--ink-2:#6e6e73;--light:#f5f5f7;--white:#fff;
   --gold:#c8a869;--gold-2:#e6d3a3;--blue:#2997ff;--wa:#25d366;
-  --r:28px;
+  --r:28px;--hero:#0b1a2f;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -35,9 +35,10 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;height:48px;background:rgba(0,
 @media(max-width:760px){.links{display:none}}
 
 /* HERO SCRUB */
-.scrub{height:420vh;position:relative;background:#000}
+.scrub{height:420vh;position:relative;background:var(--hero)}
 .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;place-items:center}
-.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .6s}
+.stage{background:var(--hero)}
+.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .6s;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent),linear-gradient(180deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent),linear-gradient(180deg,transparent,#000 6%,#000 94%,transparent);mask-composite:intersect}
 .stage video.ready{opacity:1}
 .intro{position:absolute;top:13vh;left:0;right:0;text-align:center;padding:0 22px;z-index:3;will-change:opacity,transform}
 .eyebrow{color:var(--gold);font-size:clamp(15px,1.6vw,19px);font-weight:600;letter-spacing:.02em;margin-bottom:10px}
