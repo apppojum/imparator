@@ -2,416 +2,409 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Esenler Telefon Tamiri | İmparator Cep Servis</title>
-<meta name="description" content="Esenler'de telefon tamiri: ekran değişimi, batarya, şarj soketi ve anakart onarımı. Çoğu işlem aynı gün teslim. Google'da 4,5 yıldız. WhatsApp'tan fiyat sorun: 0533 148 94 34">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>İmparator Cep Servis | Esenler Telefon Tamiri</title>
+<meta name="description" content="Esenler'de premium telefon tamiri: ekran, batarya, şarj soketi, kamera ve anakart onarımı. Çoğu işlem aynı gün. Ücretsiz arıza tespiti. 0533 148 94 34">
+<meta name="theme-color" content="#000000">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MobilePhoneStore",
-  "name": "İmparator Cep Servis",
-  "description": "Telefon tamiri ve aksesuar mağazası. Ekran, batarya, şarj soketi değişimi ve anakart onarımı.",
-  "telephone": "+905331489434",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Turgut Reis Mah. Adem Yavuz Cd. No:1/A",
-    "addressLocality": "Esenler",
-    "addressRegion": "İstanbul",
-    "postalCode": "34235",
-    "addressCountry": "TR"
-  },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "reviewCount": "51" }
-}
+{"@context":"https://schema.org","@type":"MobilePhoneStore","name":"İmparator Cep Servis","telephone":"+905331489434",
+"address":{"@type":"PostalAddress","streetAddress":"Turgut Reis Mah. Adem Yavuz Cd. No:1/A","addressLocality":"Esenler","addressRegion":"İstanbul","postalCode":"34235","addressCountry":"TR"},
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"11:00","closes":"21:00"}],
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.5","reviewCount":"51"}}
 </script>
 <style>
-  :root{
-    --bg:#f6f7f9; --surface:#ffffff; --ink:#101b2d; --ink-soft:#4b5568;
-    --line:#e4e7ec; --accent:#1d56d6; --accent-soft:#eaf0fd;
-    --wa:#1fa855; --wa-dark:#178643; --radius:14px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:'Outfit',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-  img{max-width:100%;display:block}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-  section{padding:64px 0}
-  h2{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:8px}
-  .lead{color:var(--ink-soft);max-width:60ch;margin-bottom:36px}
+:root{
+  --black:#000;--ink:#1d1d1f;--ink-2:#6e6e73;--light:#f5f5f7;--white:#fff;
+  --gold:#c8a869;--gold-2:#e6d3a3;--blue:#2997ff;--wa:#25d366;
+  --r:28px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Roboto,sans-serif;background:var(--black);color:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 
-  /* Header */
-  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem;letter-spacing:-.01em}
-  .brand-mark{width:38px;height:38px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:1.1rem;font-weight:800}
-  .nav-links{display:flex;gap:26px;font-size:.95rem;color:var(--ink-soft)}
-  .nav-links a:hover{color:var(--ink)}
-  .nav-call{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-weight:600;font-size:.9rem;transition:transform .15s}
-  .nav-call:active{transform:scale(.97)}
-  @media(max-width:760px){.nav-links{display:none}}
+/* NAV */
+header{position:fixed;inset:0 0 auto 0;z-index:60;height:48px;background:rgba(0,0,0,.72);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{height:48px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:600;font-size:15px;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+.crown{width:18px;height:18px;color:var(--gold)}
+.links{display:flex;gap:28px;font-size:12.5px;color:rgba(255,255,255,.8)}
+.links a:hover{color:#fff}
+.pill{font-size:12.5px;padding:6px 14px;border-radius:99px;background:var(--white);color:#000;font-weight:500}
+@media(max-width:760px){.links{display:none}}
 
-  /* Hero */
-  .hero{padding:72px 0 64px}
-  .hero-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;min-height:56vh}
-  .hero h1{font-size:clamp(2.1rem,5.5vw,3.4rem);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-bottom:16px}
-  .hero h1 em{font-style:normal;color:var(--accent)}
-  .hero p{color:var(--ink-soft);font-size:1.05rem;max-width:46ch;margin-bottom:28px}
-  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
-  .btn-wa{display:inline-flex;align-items:center;gap:10px;background:var(--wa);color:#fff;padding:15px 26px;border-radius:999px;font-weight:700;font-size:1rem;box-shadow:0 6px 18px rgba(31,168,85,.28);transition:transform .15s,background .15s}
-  .btn-wa:hover{background:var(--wa-dark)}
-  .btn-wa:active{transform:translateY(1px) scale(.98)}
-  .btn-call{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1.5px solid var(--line);padding:15px 26px;border-radius:999px;font-weight:600;transition:border-color .15s,transform .15s}
-  .btn-call:hover{border-color:var(--ink)}
-  .btn-call:active{transform:translateY(1px)}
-  .trust{display:flex;gap:20px;flex-wrap:wrap;font-size:.9rem;color:var(--ink-soft)}
-  .trust b{color:var(--ink)}
-  .stars{color:#f5a623;letter-spacing:2px}
+/* HERO SCRUB */
+.scrub{height:420vh;position:relative;background:#000}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;place-items:center}
+.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .6s}
+.stage video.ready{opacity:1}
+.intro{position:absolute;top:13vh;left:0;right:0;text-align:center;padding:0 22px;z-index:3;will-change:opacity,transform}
+.eyebrow{color:var(--gold);font-size:clamp(15px,1.6vw,19px);font-weight:600;letter-spacing:.02em;margin-bottom:10px}
+.hero-title{font-size:clamp(46px,9vw,112px);line-height:1.02;letter-spacing:-.045em;font-weight:700;
+  background:linear-gradient(180deg,#fff 30%,#a1a1a6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{margin-top:14px;font-size:clamp(17px,2vw,24px);color:#a1a1a6;letter-spacing:-.01em}
 
-  .hero{position:relative;overflow:hidden}
-  .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
-  .hero-bg video{width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.5;filter:saturate(1.3) contrast(1.2)}
-  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(246,247,249,.8),rgba(246,247,249,.3) 45%,rgba(246,247,249,0) 70%),linear-gradient(to bottom,rgba(246,247,249,0) 78%,var(--bg))}
-  .hero .wrap{position:relative;z-index:1}
+/* layered phone fallback */
+.phone{position:relative;width:min(210px,40vw,22vh);aspect-ratio:9/19;margin-top:34vh;perspective:1400px;z-index:1}
+.phone.hide{display:none}
+.layer{position:absolute;inset:0;border-radius:38px;transform-style:preserve-3d;transition:none;will-change:transform,opacity}
+.l-back{background:linear-gradient(145deg,#3a3a3c,#1c1c1e);box-shadow:0 40px 80px rgba(0,0,0,.6)}
+.l-back::after{content:"";position:absolute;top:18px;left:18px;width:42%;aspect-ratio:1;border-radius:24px;background:#2c2c2e;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.l-board{inset:6%;border-radius:26px;background:
+  repeating-linear-gradient(90deg,rgba(200,168,105,.18) 0 1px,transparent 1px 14px),
+  repeating-linear-gradient(0deg,rgba(200,168,105,.12) 0 1px,transparent 1px 18px),#0d3b2a}
+.l-board::before,.l-board::after{content:"";position:absolute;background:#111;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(200,168,105,.5)}
+.l-board::before{top:14%;left:18%;width:34%;height:14%}
+.l-board::after{top:36%;right:16%;width:22%;height:10%}
+.l-battery{inset:30% 14% 10%;border-radius:18px;background:linear-gradient(160deg,#2b2b2e,#0f0f10);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+.l-battery::after{content:"İMPARATOR · Li-ion";position:absolute;inset:auto 0 18px;text-align:center;font-size:9px;letter-spacing:.2em;color:var(--gold)}
+.l-frame{background:transparent;box-shadow:inset 0 0 0 7px #8e8e93,inset 0 0 0 8px #d1d1d6}
+.l-display{inset:2.5%;border-radius:34px;background:radial-gradient(120% 70% at 30% 10%,#3b2d72,#0b0b2a 55%,#000)}
+.l-glass{inset:2%;border-radius:35px;background:linear-gradient(125deg,rgba(255,255,255,.28),rgba(255,255,255,0) 40%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.l-glass::after{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:30%;height:22px;border-radius:99px;background:#000}
 
-  .hero-card{background:var(--ink);border-radius:20px;padding:34px 30px;color:#fff;position:relative;overflow:hidden}
-  .hero-card::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(29,86,214,.55),transparent 70%)}
-  .hero-card h3{font-size:1.15rem;font-weight:700;margin-bottom:18px;position:relative;z-index:1}
-  .hero-card ul{list-style:none;position:relative;z-index:1}
-  .hero-card li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:.95rem}
-  .hero-card li:last-child{border-bottom:none}
-  .hero-card li span:last-child{color:#9db6e8;font-weight:600;white-space:nowrap}
+.captions{position:absolute;bottom:11vh;left:0;right:0;text-align:center;z-index:3;padding:0 22px;pointer-events:none}
+.cap{position:absolute;left:0;right:0;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.cap.on{opacity:1;transform:none}
+.cap b{display:block;font-size:clamp(30px,5vw,56px);letter-spacing:-.035em;font-weight:700}
+.cap span{color:#a1a1a6;font-size:clamp(16px,1.8vw,21px)}
+.cap b em{font-style:normal;color:var(--gold)}
+.hint{position:absolute;bottom:3.5vh;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;color:#6e6e73;z-index:3}
 
-  /* Services */
-  .grid-serv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media(max-width:900px){.grid-serv{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.grid-serv{grid-template-columns:1fr}}
-  .serv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:8px;transition:transform .15s,box-shadow .15s}
-  .serv:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(16,27,45,.07)}
-  .serv-ico{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:6px}
-  .serv h3{font-size:1.05rem;font-weight:700}
-  .serv p{font-size:.9rem;color:var(--ink-soft);flex:1}
-  .serv .time{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:4px 12px;border-radius:999px;width:fit-content}
-  .serv a{font-size:.9rem;font-weight:700;color:var(--wa-dark);margin-top:6px}
-  .serv a:hover{text-decoration:underline}
+/* SECTIONS */
+section{padding:clamp(80px,12vw,150px) 0}
+.light{background:var(--light);color:var(--ink)}
+.white{background:var(--white);color:var(--ink)}
+.h2{font-size:clamp(36px,6vw,72px);line-height:1.04;letter-spacing:-.04em;font-weight:700}
+.lead{font-size:clamp(18px,2.1vw,24px);color:var(--ink-2);letter-spacing:-.01em;max-width:680px;margin-top:16px;line-height:1.4}
+.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
 
-  /* Steps */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media(max-width:760px){.steps{grid-template-columns:1fr}}
-  .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
-  .step-no{font-size:.85rem;font-weight:800;color:var(--accent);margin-bottom:10px}
-  .step h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
-  .step p{font-size:.92rem;color:var(--ink-soft)}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:70px;border-top:1px solid #d2d2d7}
+.stat{padding:34px 12px 0}
+.stat strong{display:block;font-size:clamp(40px,5.5vw,64px);letter-spacing:-.045em;font-weight:700;line-height:1}
+.stat strong.gold{background:linear-gradient(135deg,#a8843d,#c8a869 50%,#8a6a2c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat p{margin-top:10px;color:var(--ink-2);font-size:15px;line-height:1.4}
+@media(max-width:760px){.stats{grid-template-columns:1fr 1fr;row-gap:30px}}
 
-  /* Why */
-  .why{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
-  @media(max-width:860px){.why-grid{grid-template-columns:repeat(2,1fr)}}
-  .why-item h3{font-size:1rem;font-weight:700;margin-bottom:4px}
-  .why-item p{font-size:.9rem;color:var(--ink-soft)}
-  .why-item .big{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;color:var(--accent);margin-bottom:4px}
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:64px}
+.tile{border-radius:var(--r);padding:38px 34px;min-height:340px;display:flex;flex-direction:column;position:relative;overflow:hidden;background:var(--white);color:var(--ink);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.tile:hover{transform:scale(1.012)}
+.tile.dark{background:#000;color:#fff}
+.tile.span4{grid-column:span 4}.tile.span2{grid-column:span 2}.tile.span3{grid-column:span 3}.tile.span6{grid-column:1/-1}
+.tile .k{font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.02em}
+.tile h3{font-size:clamp(28px,3.4vw,40px);letter-spacing:-.035em;line-height:1.08;margin-top:8px}
+.tile p{color:var(--ink-2);font-size:17px;line-height:1.45;margin-top:12px;max-width:40ch}
+.tile.dark p{color:#a1a1a6}
+.tile .foot{margin-top:auto;padding-top:26px;display:flex;justify-content:space-between;align-items:center;font-size:15px}
+.tile .foot a{color:var(--blue)}
+.tile .foot a:hover{text-decoration:underline}
+.tile .time{color:var(--ink-2)}
+.tile.dark .time{color:#86868b}
+.glow{position:absolute;right:-80px;bottom:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,105,.35),transparent 65%);pointer-events:none}
+.mini-screen{position:absolute;right:40px;top:40px;width:120px;aspect-ratio:9/19;border-radius:22px;background:radial-gradient(120% 70% at 30% 10%,#3b2d72,#0b0b2a 55%,#000);box-shadow:inset 0 0 0 5px #8e8e93,0 30px 60px rgba(200,168,105,.2);transform:rotate(12deg)}
+@media(max-width:900px){.tile.span4,.tile.span2,.tile.span3{grid-column:span 6}.tile{min-height:280px}.mini-screen{display:none}}
 
-  /* Reviews */
-  .rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:640px}
-  @media(max-width:560px){.rev-grid{grid-template-columns:1fr}}
-  .rev{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:4px}
-  .rev .score{font-size:2rem;font-weight:800;letter-spacing:-.02em}
-  .rev .src{font-size:.9rem;color:var(--ink-soft)}
-  .rev a{margin-top:10px;font-size:.9rem;font-weight:700;color:var(--accent)}
-  .rev a:hover{text-decoration:underline}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:80px}
+.step .n{font-size:clamp(64px,8vw,104px);font-weight:700;letter-spacing:-.06em;line-height:1;background:linear-gradient(180deg,#fff,#3a3a3c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h3{font-size:24px;letter-spacing:-.02em;margin-top:14px}
+.step p{color:#a1a1a6;font-size:17px;line-height:1.5;margin-top:10px}
+@media(max-width:760px){.steps{grid-template-columns:1fr;gap:40px}}
 
-  /* Accessories */
-  .acc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  @media(max-width:860px){.acc-grid{grid-template-columns:repeat(2,1fr)}}
-  .acc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;text-align:center}
-  .acc .emoji{font-size:1.8rem;margin-bottom:8px}
-  .acc h3{font-size:.98rem;font-weight:700}
-  .acc p{font-size:.85rem;color:var(--ink-soft)}
+/* reviews */
+.rev{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:60px}
+.rcard{background:var(--light);border-radius:var(--r);padding:44px 38px;text-align:left}
+.rcard .score{font-size:clamp(64px,8vw,96px);font-weight:700;letter-spacing:-.05em;line-height:1}
+.rcard .score small{font-size:.35em;color:var(--ink-2);letter-spacing:-.01em}
+.stars{color:var(--gold);letter-spacing:4px;font-size:20px;margin:12px 0 6px}
+.rcard p{color:var(--ink-2)}
+.rcard a{display:inline-block;margin-top:22px;color:#0066cc;font-size:17px}
+.rcard a:hover{text-decoration:underline}
+@media(max-width:760px){.rev{grid-template-columns:1fr}}
 
-  /* Contact */
-  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:start}
-  @media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
-  .c-line{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
-  .c-line:last-of-type{border-bottom:none}
-  .c-ico{width:40px;height:40px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex-shrink:0}
-  .c-line b{display:block;font-size:.95rem}
-  .c-line span{font-size:.92rem;color:var(--ink-soft)}
-  .map{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-height:340px}
-  .map iframe{width:100%;height:100%;min-height:340px;border:0}
+/* accessories */
+.acc{display:flex;gap:18px;margin-top:56px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:none}
+.acc::-webkit-scrollbar{display:none}
+.acard{flex:0 0 min(260px,72vw);scroll-snap-align:start;background:var(--white);border-radius:22px;padding:30px 26px}
+.acard h4{font-size:21px;letter-spacing:-.02em}
+.acard p{color:var(--ink-2);margin-top:6px;font-size:15px}
+.acard .dot{width:44px;height:44px;border-radius:12px;background:#000;margin-bottom:26px;display:grid;place-items:center;color:var(--gold)}
 
-  footer{border-top:1px solid var(--line);padding:28px 0;font-size:.88rem;color:var(--ink-soft)}
-  .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+/* contact */
+.contact{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;margin-top:60px}
+.map{border-radius:var(--r);overflow:hidden;min-height:420px;background:#1c1c1e;position:relative}
+.map iframe{position:relative;z-index:1}
+.map-fb{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px;background:radial-gradient(circle at 50% 45%,rgba(200,168,105,.18),transparent 55%),repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 44px),repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 44px),#1c1c1e;color:#fff}
+.map-fb svg{width:44px;height:44px;color:var(--gold)}
+.map-fb b{font-size:21px;letter-spacing:-.02em}
+.map-fb span{color:#86868b;font-size:15px}
+.map-fb .btn{margin-top:6px}
+.map iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(1) invert(.92) contrast(.9)}
+.info{background:#1c1c1e;border-radius:var(--r);padding:42px 38px;display:flex;flex-direction:column;gap:26px}
+.info dt{font-size:13px;color:#86868b;letter-spacing:.02em}
+.info dd{font-size:21px;letter-spacing:-.02em;margin-top:4px;line-height:1.35}
+.open{display:inline-flex;align-items:center;gap:8px}
+.open i{width:8px;height:8px;border-radius:50%;background:#30d158;box-shadow:0 0 0 4px rgba(48,209,88,.2)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:auto}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:99px;font-size:17px;font-weight:500;transition:transform .2s,background .2s}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--white);color:#000}
+.btn.wa{background:var(--wa);color:#000}
+.btn.ghost{border:1px solid rgba(255,255,255,.3)}
+@media(max-width:860px){.contact{grid-template-columns:1fr}.map,.map iframe{min-height:300px}}
 
-  /* Floating WhatsApp */
-  .wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 24px rgba(31,168,85,.4);transition:transform .15s}
-  .wa-float:hover{transform:scale(1.06)}
-  /* Animated coffee credit */
-  .coffee{display:inline-block;width:16px;height:16px;vertical-align:-2px;overflow:visible}
-  .coffee .steam{stroke:var(--ink-soft);stroke-width:1.6;stroke-linecap:round;fill:none;animation:steam 2.4s ease-in-out infinite}
-  .coffee .steam.s2{animation-delay:1.2s}
-  @keyframes steam{
-    0%{transform:translateY(0);opacity:0}
-    30%{opacity:.9}
-    100%{transform:translateY(-4px);opacity:0}
-  }
-  @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}}
+footer{border-top:1px solid #1d1d1f;padding:28px 0 110px;color:#6e6e73;font-size:12.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* mobile action bar */
+.bar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:70;display:none;gap:10px;padding:8px;border-radius:99px;background:rgba(28,28,30,.8);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1)}
+.bar a{flex:1;text-align:center;padding:13px 0;border-radius:99px;font-weight:600;font-size:15px}
+.bar .c{background:#fff;color:#000}.bar .w{background:var(--wa);color:#000}
+@media(max-width:760px){.bar{display:flex}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.cap{transition:none}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <div class="brand"><span class="brand-mark">İC</span> İmparator Cep Servis</div>
-    <nav class="nav-links">
-      <a href="#hizmetler">Hizmetler</a>
-      <a href="#neden">Neden Biz</a>
-      <a href="#aksesuar">Aksesuar</a>
-      <a href="#iletisim">İletişim</a>
-    </nav>
-    <a class="nav-call" href="tel:+905331489434">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02Z"/></svg>
-      0533 148 94 34
+    <a href="#" class="brand">
+      <svg class="crown" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 12H5L3 7z"/></svg>
+      İmparator Cep Servis
     </a>
+    <nav class="links">
+      <a href="#hizmetler">Hizmetler</a><a href="#surec">Süreç</a><a href="#yorumlar">Yorumlar</a><a href="#aksesuar">Aksesuar</a><a href="#iletisim">İletişim</a>
+    </nav>
+    <a class="pill" href="tel:+905331489434">Ara</a>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-bg" aria-hidden="true">
+<!-- HERO: kaydırmayla parçalara ayrılan telefon -->
+<div class="scrub" id="scrub">
+  <div class="stage">
     <video id="heroVid" src="telefon.mp4" muted playsinline preload="auto"></video>
+
+    <div class="intro" id="intro">
+      <div class="eyebrow">İmparator Cep Servis · Esenler</div>
+      <h1 class="hero-title">İçini biz biliriz.</h1>
+      <p class="hero-sub">Her parçası, ustalıkla.</p>
+    </div>
+
+    <div class="phone" id="phone" aria-hidden="true">
+      <div class="layer l-back"   data-z="-3"></div>
+      <div class="layer l-board"  data-z="-2"></div>
+      <div class="layer l-battery" data-z="-1"></div>
+      <div class="layer l-frame"  data-z="0"></div>
+      <div class="layer l-display" data-z="1"></div>
+      <div class="layer l-glass"  data-z="2"></div>
+    </div>
+
+    <div class="captions">
+      <div class="cap" data-from=".22" data-to=".45"><b><em>Ekran.</em> Bir saatte yeni gibi.</b><span>Orijinal kalitede panel, garantili işçilik.</span></div>
+      <div class="cap" data-from=".45" data-to=".68"><b><em>Batarya.</em> Gün boyu yeniden.</b><span>30–45 dakikada değişim.</span></div>
+      <div class="cap" data-from=".68" data-to="1.1"><b><em>Anakart.</em> Kart seviyesinde onarım.</b><span>Açılmayan, su almış cihazlar dahil.</span></div>
+    </div>
+    <div class="hint" id="hint">KAYDIR</div>
   </div>
-  <div class="wrap hero-grid">
-    <div>
-      <h1>Telefonunuz bozuldu mu? <em>Çoğu tamir aynı gün</em> teslim.</h1>
-      <p>Esenler'de ekran, batarya, şarj soketi değişimi ve anakart onarımı. Önce ücretsiz arıza tespiti yapılır, onayınız olmadan işlem başlamaz.</p>
-      <div class="cta-row">
-        <a class="btn-wa" href="https://wa.me/905331489434?text=Merhaba%2C%20telefonum%20i%C3%A7in%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.66 15L2 22l5.16-1.32A10 10 0 1 0 12 2Zm5.46 14.11c-.23.65-1.35 1.24-1.86 1.28-.5.04-.97.22-3.27-.68-2.77-1.09-4.52-3.9-4.66-4.08-.13-.18-1.11-1.47-1.11-2.8 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.23.55.78 1.89.85 2.03.07.13.11.29.02.47-.08.18-.13.29-.25.45l-.38.44c-.13.13-.26.27-.11.53.14.27.64 1.06 1.38 1.72.95.85 1.75 1.11 2 1.24.25.13.4.11.54-.07.14-.18.62-.72.78-.97.16-.25.33-.2.55-.12.23.08 1.44.68 1.69.8.25.13.41.19.47.29.06.11.06.62-.17 1.27Z"/></svg>
-          WhatsApp'tan Fiyat Sor
-        </a>
-        <a class="btn-call" href="tel:+905331489434">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02Z"/></svg>
-          Hemen Ara
-        </a>
-      </div>
-      <div class="trust">
-        <span><span class="stars">★★★★★</span> <b>4,5/5</b> Google (51 yorum)</span>
-        <span><b>21:00</b>'a kadar açık</span>
-      </div>
+</div>
+
+<!-- STATS -->
+<section class="white">
+  <div class="wrap">
+    <h2 class="h2 reveal">Güven,<br>rakamlarla.</h2>
+    <p class="lead reveal">Adem Yavuz Caddesi'nde, mahallenin bildiği servis. Ücretsiz arıza tespiti, onayınız olmadan tek bir vida sökülmez.</p>
+    <div class="stats">
+      <div class="stat reveal"><strong class="gold">4,5★</strong><p>Google puanı<br>51 müşteri yorumu</p></div>
+      <div class="stat reveal"><strong>1 saat</strong><p>Yaygın tamirlerde<br>ortalama teslim</p></div>
+      <div class="stat reveal"><strong>₺0</strong><p>Arıza tespiti<br>her zaman ücretsiz</p></div>
+      <div class="stat reveal"><strong>✓</strong><p>İşçilik ve parça<br>garanti kapsamında</p></div>
     </div>
   </div>
 </section>
 
-<section id="hizmetler">
+<!-- SERVICES -->
+<section class="light" id="hizmetler">
   <div class="wrap">
-    <h2>Hizmetlerimiz</h2>
-    <p class="lead">Tüm marka ve modellere bakılır. Fiyat, cihazınızın modeline göre değişir: WhatsApp'tan modelinizi yazın, dakikalar içinde net fiyat verelim.</p>
-    <div class="grid-serv">
-      <div class="serv">
-        <div class="serv-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="6" y1="6" x2="18" y2="6"/><line x1="6" y1="18" x2="18" y2="18"/></svg></div>
-        <h3>Ekran Değişimi</h3>
-        <p>Kırık, çatlak veya görüntü vermeyen ekranlar için orijinal kalitede panel değişimi.</p>
-        <span class="time">Yaklaşık 1 saat</span>
-        <a href="https://wa.me/905331489434?text=Merhaba%2C%20ekran%20de%C4%9Fi%C5%9Fimi%20fiyat%C4%B1%20almak%20istiyorum.%20Modelim%3A%20" target="_blank" rel="noopener">Fiyat sor →</a>
-      </div>
-      <div class="serv">
-        <div class="serv-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="16" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/></svg></div>
-        <h3>Batarya Değişimi</h3>
-        <p>Şarjı hızlı biten, şişen veya aniden kapanan telefonlar için yeni batarya.</p>
-        <span class="time">30-45 dakika</span>
-        <a href="https://wa.me/905331489434?text=Merhaba%2C%20batarya%20de%C4%9Fi%C5%9Fimi%20fiyat%C4%B1%20almak%20istiyorum.%20Modelim%3A%20" target="_blank" rel="noopener">Fiyat sor →</a>
-      </div>
-      <div class="serv">
-        <div class="serv-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div>
-        <h3>Şarj Soketi Değişimi</h3>
-        <p>Şarj almayan veya kabloyu tutmayan giriş soketlerinin değişimi.</p>
-        <span class="time">Yaklaşık 1 saat</span>
-        <a href="https://wa.me/905331489434?text=Merhaba%2C%20%C5%9Farj%20soketi%20de%C4%9Fi%C5%9Fimi%20fiyat%C4%B1%20almak%20istiyorum.%20Modelim%3A%20" target="_blank" rel="noopener">Fiyat sor →</a>
-      </div>
-      <div class="serv">
-        <div class="serv-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="4"/><path d="M5 7h2l2-3h6l2 3h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/></svg></div>
-        <h3>Kamera Değişimi</h3>
-        <p>Bulanık çeken, odaklamayan veya hiç açılmayan ön ve arka kameralar.</p>
-        <span class="time">Yaklaşık 1 saat</span>
-        <a href="https://wa.me/905331489434?text=Merhaba%2C%20kamera%20de%C4%9Fi%C5%9Fimi%20fiyat%C4%B1%20almak%20istiyorum.%20Modelim%3A%20" target="_blank" rel="noopener">Fiyat sor →</a>
-      </div>
-      <div class="serv">
-        <div class="serv-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/></svg></div>
+    <h2 class="h2 reveal">Hizmetler.</h2>
+    <p class="lead reveal">Tüm marka ve modeller. Modelinizi yazın, dakikalar içinde net fiyat verelim.</p>
+    <div class="bento">
+      <article class="tile dark span4 reveal">
+        <div class="glow"></div><div class="mini-screen"></div>
+        <span class="k">En çok tercih edilen</span>
+        <h3>Ekran<br>Değişimi</h3>
+        <p>Kırık, çatlak ya da görüntü vermeyen ekranlar için orijinal kalitede panel.</p>
+        <div class="foot"><span class="time">Yaklaşık 1 saat</span><a href="https://wa.me/905331489434?text=Merhaba%2C%20ekran%20de%C4%9Fi%C5%9Fimi%20i%C3%A7in%20fiyat%20almak%20istiyorum.%20Model%3A" target="_blank" rel="noopener">Fiyat sor ›</a></div>
+      </article>
+      <article class="tile span2 reveal">
+        <span class="k">Güç</span><h3>Batarya</h3>
+        <p>Çabuk biten, şişen ya da aniden kapanan telefonlar için yeni batarya.</p>
+        <div class="foot"><span class="time">30–45 dk</span><a href="https://wa.me/905331489434?text=Merhaba%2C%20batarya%20de%C4%9Fi%C5%9Fimi%20i%C3%A7in%20fiyat%20almak%20istiyorum.%20Model%3A" target="_blank" rel="noopener">Fiyat sor ›</a></div>
+      </article>
+      <article class="tile span2 reveal">
+        <span class="k">Bağlantı</span><h3>Şarj Soketi</h3>
+        <p>Şarj almayan veya kabloyu tutmayan girişlerin değişimi.</p>
+        <div class="foot"><span class="time">~1 saat</span><a href="https://wa.me/905331489434?text=Merhaba%2C%20%C5%9Farj%20soketi%20i%C3%A7in%20fiyat%20almak%20istiyorum.%20Model%3A" target="_blank" rel="noopener">Fiyat sor ›</a></div>
+      </article>
+      <article class="tile span2 reveal">
+        <span class="k">Görüntü</span><h3>Kamera</h3>
+        <p>Bulanık çeken, odaklamayan ya da açılmayan ön ve arka kameralar.</p>
+        <div class="foot"><span class="time">~1 saat</span><a href="https://wa.me/905331489434?text=Merhaba%2C%20kamera%20de%C4%9Fi%C5%9Fimi%20i%C3%A7in%20fiyat%20almak%20istiyorum.%20Model%3A" target="_blank" rel="noopener">Fiyat sor ›</a></div>
+      </article>
+      <article class="tile span2 reveal">
+        <span class="k">Yazılım</span><h3>Yazılım &amp; Veri</h3>
+        <p>Güncelleme, format, veri kurtarma ve açılış sorunları.</p>
+        <div class="foot"><span class="time">Aynı gün</span><a href="https://wa.me/905331489434?text=Merhaba%2C%20yaz%C4%B1l%C4%B1m%20sorunu%20i%C3%A7in%20bilgi%20almak%20istiyorum.%20Model%3A" target="_blank" rel="noopener">Fiyat sor ›</a></div>
+      </article>
+      <article class="tile dark span6 reveal" style="min-height:260px">
+        <div class="glow" style="right:auto;left:-100px"></div>
+        <span class="k">Uzmanlık</span>
         <h3>Anakart Onarımı</h3>
-        <p>Açılmayan, su temas etmiş veya şarj yolu arızalı cihazlarda kart seviyesinde onarım.</p>
-        <span class="time">1-3 gün</span>
-        <a href="https://wa.me/905331489434?text=Merhaba%2C%20anakart%20onar%C4%B1m%C4%B1%20i%C3%A7in%20bilgi%20almak%20istiyorum.%20Modelim%3A%20" target="_blank" rel="noopener">Fiyat sor →</a>
-      </div>
-      <div class="serv">
-        <div class="serv-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/></svg></div>
-        <h3>Yazılım ve Veri</h3>
-        <p>Yazılım güncelleme, format, veri kurtarma ve telefon açılış sorunları.</p>
-        <span class="time">Aynı gün</span>
-        <a href="https://wa.me/905331489434?text=Merhaba%2C%20yaz%C4%B1l%C4%B1m%20%2F%20veri%20i%C5%9Flemi%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">Fiyat sor →</a>
-      </div>
+        <p>Başka yerde "yapılamaz" denen cihazlar: su temaslı, açılmayan, şarj yolu arızalı. Mikroskop altında, kart seviyesinde.</p>
+        <div class="foot"><span class="time">1–3 gün</span><a href="https://wa.me/905331489434?text=Merhaba%2C%20anakart%20ar%C4%B1zas%C4%B1%20i%C3%A7in%20bilgi%20almak%20istiyorum.%20Model%3A" target="_blank" rel="noopener">Durumu anlat ›</a></div>
+      </article>
     </div>
   </div>
 </section>
 
-<section>
+<!-- PROCESS -->
+<section id="surec">
   <div class="wrap">
-    <h2>Nasıl çalışır?</h2>
-    <p class="lead">Üç adımda telefonunuz elinizde.</p>
+    <h2 class="h2 reveal">Üç adım.<br><span style="color:#6e6e73">Aynı gün.</span></h2>
     <div class="steps">
-      <div class="step">
-        <div class="step-no">1. ADIM</div>
-        <h3>WhatsApp'tan yazın</h3>
-        <p>Telefonunuzun modelini ve sorununu yazın. Kısa sürede net fiyat ve süre bilgisi verelim.</p>
-      </div>
-      <div class="step">
-        <div class="step-no">2. ADIM</div>
-        <h3>Cihazınızı getirin</h3>
-        <p>Mağazamızda ücretsiz arıza tespiti yapılır. Onay vermeden hiçbir işlem başlamaz.</p>
-      </div>
-      <div class="step">
-        <div class="step-no">3. ADIM</div>
-        <h3>Aynı gün teslim alın</h3>
-        <p>Ekran ve batarya gibi işlemler çoğunlukla 1 saat içinde biter. Beklerken çayınızı için.</p>
-      </div>
+      <div class="step reveal"><div class="n">01</div><h3>WhatsApp'tan yazın</h3><p>Model ve sorunu yazın, net fiyat ve süreyi hemen iletelim.</p></div>
+      <div class="step reveal"><div class="n">02</div><h3>Cihazı getirin</h3><p>Ücretsiz arıza tespiti. Onay vermeden hiçbir işlem başlamaz.</p></div>
+      <div class="step reveal"><div class="n">03</div><h3>Teslim alın</h3><p>Ekran ve batarya çoğunlukla 1 saatte biter. Beklerken çayımızı için.</p></div>
     </div>
   </div>
 </section>
 
-<section class="why" id="neden">
+<!-- REVIEWS -->
+<section class="white" id="yorumlar">
+  <div class="wrap center">
+    <h2 class="h2 reveal">Müşterilerimiz<br>anlatsın.</h2>
+    <p class="lead reveal">Yorumların tamamı Google ve Yandex'te.</p>
+    <div class="rev">
+      <div class="rcard reveal"><div class="score">4,5<small> /5</small></div><div class="stars">★★★★★</div><p>Google · 51 yorum</p><a href="https://www.google.com/search?q=%C4%B0mparator+Cep+Servis+Esenler" target="_blank" rel="noopener">Google yorumlarını oku ›</a></div>
+      <div class="rcard reveal"><div class="score">4,5<small> /5</small></div><div class="stars">★★★★★</div><p>Yandex · 11 yorum</p><a href="https://yandex.com.tr/maps/?text=%C4%B0mparator%20Cep%20Servis%20Esenler" target="_blank" rel="noopener">Yandex yorumlarını oku ›</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESSORIES -->
+<section class="light" id="aksesuar">
   <div class="wrap">
-    <h2>Neden İmparator Cep Servis?</h2>
-    <p class="lead">Esenler Adem Yavuz Caddesi'nde, mahallenin bildiği ve güvendiği servis.</p>
-    <div class="why-grid">
-      <div class="why-item"><div class="big">4,5★</div><h3>Google puanı</h3><p>51 gerçek müşteri yorumu ile.</p></div>
-      <div class="why-item"><div class="big">1 saat</div><h3>Hızlı teslim</h3><p>Yaygın tamirlerin çoğu bekleme sürenizde biter.</p></div>
-      <div class="why-item"><div class="big">✓</div><h3>Garantili işçilik</h3><p>Yapılan işlem ve takılan parça garanti kapsamındadır.</p></div>
-      <div class="why-item"><div class="big">₺0</div><h3>Ücretsiz tespit</h3><p>Arıza tespiti için ücret alınmaz, onaysız işlem yapılmaz.</p></div>
+    <h2 class="h2 reveal">Aksesuar.</h2>
+    <p class="lead reveal">Kılıftan şarj aletine. Stok durumunu WhatsApp'tan sorabilirsiniz.</p>
+    <div class="acc">
+      <div class="acard"><div class="dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/></svg></div><h4>Kılıf ve Kapak</h4><p>Tüm popüler modeller için.</p></div>
+      <div class="acard"><div class="dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></div><h4>Ekran Koruyucu</h4><p>Kırılmaz cam, ücretsiz takım.</p></div>
+      <div class="acard"><div class="dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h4>Şarj ve Kablo</h4><p>Hızlı şarj destekli ürünler.</p></div>
+      <div class="acard"><div class="dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="7" rx="2"/><rect x="17" y="14" width="4" height="7" rx="2"/></svg></div><h4>Kulaklık</h4><p>Kablolu ve bluetooth.</p></div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <h2>Müşterilerimiz ne diyor?</h2>
-    <p class="lead">Yorumların tamamını Google ve Yandex üzerinden okuyabilirsiniz.</p>
-    <div class="rev-grid">
-      <div class="rev">
-        <div class="score">4,5<span style="font-size:1rem;color:var(--ink-soft)">/5</span></div>
-        <div class="stars">★★★★★</div>
-        <div class="src">Google · 51 yorum</div>
-        <a href="https://www.google.com/maps/search/?api=1&query=%C4%B0mparator+Cep+Servis+Esenler" target="_blank" rel="noopener">Google yorumlarını oku →</a>
-      </div>
-      <div class="rev">
-        <div class="score">4,5<span style="font-size:1rem;color:var(--ink-soft)">/5</span></div>
-        <div class="stars">★★★★★</div>
-        <div class="src">Yandex · 11 yorum</div>
-        <a href="https://yandex.com.tr/maps/org/imparator_cep_servis/1359005069/reviews/" target="_blank" rel="noopener">Yandex yorumlarını oku →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="aksesuar">
-  <div class="wrap">
-    <h2>Aksesuarlar</h2>
-    <p class="lead">Kılıftan şarj aletine kadar geniş aksesuar çeşidi mağazamızda. Aradığınız ürünün stok durumunu WhatsApp'tan sorabilirsiniz.</p>
-    <div class="acc-grid">
-      <div class="acc"><div class="emoji">📱</div><h3>Kılıf ve Kapak</h3><p>Tüm popüler modeller için.</p></div>
-      <div class="acc"><div class="emoji">🛡️</div><h3>Ekran Koruyucu</h3><p>Kırılmaz cam, ücretsiz takım.</p></div>
-      <div class="acc"><div class="emoji">🔌</div><h3>Şarj Aleti ve Kablo</h3><p>Hızlı şarj destekli orijinal ürünler.</p></div>
-      <div class="acc"><div class="emoji">🎧</div><h3>Kulaklık</h3><p>Kablolu ve bluetooth seçenekler.</p></div>
-    </div>
-    <p style="margin-top:24px"><a class="btn-wa" style="padding:13px 22px;font-size:.95rem" href="https://wa.me/905331489434?text=Merhaba%2C%20aksesuar%20stok%20durumu%20sormak%20istiyorum." target="_blank" rel="noopener">Stok Sor</a></p>
-  </div>
-</section>
-
+<!-- CONTACT -->
 <section id="iletisim">
   <div class="wrap">
-    <h2>İletişim ve Konum</h2>
-    <p class="lead">Adem Yavuz Caddesi üzerindeyiz. Uğrayın, çayımızı için, telefonunuza birlikte bakalım.</p>
-    <div class="contact-grid">
-      <div>
-        <div class="c-line">
-          <div class="c-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><b>Adres</b><span>Turgut Reis Mah. Adem Yavuz Cd. No:1/A, 34235 Esenler / İstanbul</span></div>
-        </div>
-        <div class="c-line">
-          <div class="c-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02Z"/></svg></div>
-          <div><b>Telefon</b><span><a href="tel:+905331489434" style="color:var(--accent);font-weight:600">0533 148 94 34</a></span></div>
-        </div>
-        <div class="c-line">
-          <div class="c-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <div><b>Çalışma Saatleri</b><span>Her gün 21:00'a kadar açık</span></div>
-        </div>
-        <div style="margin-top:20px">
-          <a class="btn-wa" style="padding:13px 22px;font-size:.95rem" href="https://wa.me/905331489434" target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
-        </div>
+    <h2 class="h2 reveal">Uğrayın.<br><span style="color:#6e6e73">Birlikte bakalım.</span></h2>
+    <div class="contact">
+      <div class="map reveal">
+        <a class="map-fb" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14cabaac5052e739:0x32aa79e13da6ed19" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg><b>Adem Yavuz Cd. No:1/A</b><span>Turgut Reis, Esenler</span><span class="btn primary">Google Haritalar'da aç</span></a>
+        <iframe loading="lazy" title="İmparator Cep Servis konumu" src="https://www.google.com/maps?q=%C4%B0mparator%20Cep%20Servis%2C%20Adem%20Yavuz%20Cd.%20No%3A1%2FA%2C%20Esenler%2C%20%C4%B0stanbul&output=embed"></iframe>
       </div>
-      <div class="map">
-        <iframe title="İmparator Cep Servis Harita" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=%C4%B0mparator%20Cep%20Servis%2C%20Adem%20Yavuz%20Cd.%20No%3A1%2FA%2C%20Esenler%2C%20%C4%B0stanbul&output=embed"></iframe>
-      </div>
+      <dl class="info reveal">
+        <div><dt>Adres</dt><dd>Turgut Reis Mah. Adem Yavuz Cd. No:1/A<br>34235 Esenler / İstanbul</dd></div>
+        <div><dt>Telefon</dt><dd><a href="tel:+905331489434">0533 148 94 34</a></dd></div>
+        <div><dt>Çalışma saatleri</dt><dd class="open"><i></i><span id="openTxt">Pazartesi – Cumartesi · 11:00 – 21:00</span></dd><dd style="font-size:15px;color:#86868b;margin-top:6px">Pazar kapalı</dd></div>
+        <div class="btns">
+          <a class="btn wa" href="https://wa.me/905331489434?text=Merhaba%2C%20telefonum%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn primary" href="tel:+905331489434">Hemen ara</a>
+          <a class="btn ghost" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14cabaac5052e739:0x32aa79e13da6ed19" target="_blank" rel="noopener">Yol tarifi</a>
+        </div>
+      </dl>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap foot">
-    <span>© 2026 İmparator Cep Servis, Esenler / İstanbul</span>
-    <span>Telefon tamiri ve aksesuar</span>
-    <span><a href="https://piksel.work" target="_blank" rel="noopener" style="color:var(--ink-soft)"><b>piksel.work</b></a> tarafından
-      <svg class="coffee" viewBox="0 0 24 24" aria-label="kahve">
-        <path class="steam" d="M9 5c0-1.2 1-1.4 1-2.6"/>
-        <path class="steam s2" d="M13 5c0-1.2 1-1.4 1-2.6"/>
-        <path fill="none" stroke="var(--ink-soft)" stroke-width="1.8" d="M5.5 8.5h11v4a5.5 5.5 0 0 1-5.5 5.5h0A5.5 5.5 0 0 1 5.5 12.5v-4Z"/>
-        <path fill="none" stroke="var(--ink-soft)" stroke-width="1.8" d="M16.5 10h1.5a2.5 2.5 0 0 1 0 5h-1.9"/>
-        <line stroke="var(--ink-soft)" stroke-width="1.8" stroke-linecap="round" x1="5" y1="21" x2="16" y2="21"/>
-      </svg>
-      ile yapıldı · 2026</span>
-  </div>
+  <div class="wrap"><span>© 2026 İmparator Cep Servis · Esenler / İstanbul</span><span>Telefon tamiri ve aksesuar</span></div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/905331489434?text=Merhaba%2C%20telefonum%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp ile yazın">
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.66 15L2 22l5.16-1.32A10 10 0 1 0 12 2Zm5.46 14.11c-.23.65-1.35 1.24-1.86 1.28-.5.04-.97.22-3.27-.68-2.77-1.09-4.52-3.9-4.66-4.08-.13-.18-1.11-1.47-1.11-2.8 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.23.55.78 1.89.85 2.03.07.13.11.29.02.47-.08.18-.13.29-.25.45l-.38.44c-.13.13-.26.27-.11.53.14.27.64 1.06 1.38 1.72.95.85 1.75 1.11 2 1.24.25.13.4.11.54-.07.14-.18.62-.72.78-.97.16-.25.33-.2.55-.12.23.08 1.44.68 1.69.8.25.13.41.19.47.29.06.11.06.62-.17 1.27Z"/></svg>
-</a>
+<div class="bar">
+  <a class="c" href="tel:+905331489434">Ara</a>
+  <a class="w" href="https://wa.me/905331489434" target="_blank" rel="noopener">WhatsApp</a>
+</div>
 
 <script>
 (function(){
-  var v=document.getElementById('heroVid');
-  if(!v) return;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var target=0,current=0,ready=false;
+  var scrub=document.getElementById('scrub'),v=document.getElementById('heroVid'),
+      phone=document.getElementById('phone'),intro=document.getElementById('intro'),
+      hint=document.getElementById('hint'),caps=[].slice.call(document.querySelectorAll('.cap')),
+      layers=[].slice.call(phone.querySelectorAll('.layer')),
+      useVideo=false,target=0,cur=0,raf=null;
 
-  v.addEventListener('loadedmetadata',function(){ready=true;try{v.currentTime=0.01}catch(e){}});
-  v.addEventListener('error',function(){var m=v.closest('.hero-bg');if(m)m.style.display='none'});
-
-  // iOS: ilk dokunuşta decode kilidini aç
-  var unlocked=false;
-  function unlock(){
-    if(unlocked)return;unlocked=true;
-    var p=v.play();
-    if(p&&p.then)p.then(function(){v.pause()}).catch(function(){});
-  }
+  // Video varsa onu kullan, yoksa katmanlı telefon animasyonu devrede kalır
+  v.addEventListener('loadedmetadata',function(){
+    if(v.duration>0){useVideo=true;v.classList.add('ready');phone.classList.add('hide');try{v.currentTime=.01}catch(e){}}
+  });
+  v.addEventListener('error',function(){useVideo=false});
+  // iOS: ilk dokunuşta videoyu "uyandır"
+  function unlock(){v.play().then(function(){v.pause()}).catch(function(){})}
   window.addEventListener('touchstart',unlock,{once:true,passive:true});
-  window.addEventListener('scroll',unlock,{once:true,passive:true});
 
-  if(reduce)return; // hareket azaltma: ilk kare sabit kalır
-
-  function onScroll(){
-    var range=window.innerHeight*1.4;
-    target=Math.min(1,Math.max(0,window.scrollY/range));
+  function progress(){
+    var r=scrub.getBoundingClientRect(),range=scrub.offsetHeight-innerHeight;
+    return Math.max(0,Math.min(1,-r.top/range));
   }
-  window.addEventListener('scroll',onScroll,{passive:true});
+  function onScroll(){target=progress();if(!raf)raf=requestAnimationFrame(tick)}
+  function tick(){
+    cur+=(target-cur)*.14; // yay yumuşatma
+    if(Math.abs(target-cur)<.0005)cur=target;
+    render(cur);
+    raf=Math.abs(target-cur)>0?requestAnimationFrame(tick):null;
+  }
+  function render(p){
+    intro.style.opacity=Math.max(0,1-p*5);
+    intro.style.transform='translateY('+(-p*120)+'px) scale('+(1-p*.3)+')';
+    hint.style.opacity=Math.max(0,1-p*10);
+    if(useVideo){try{v.currentTime=p*(v.duration-.06)}catch(e){}}
+    else{
+      var e=Math.min(1,Math.max(0,(p-.08)/.6)); e=e<.5?2*e*e:1-Math.pow(-2*e+2,2)/2;
+      var mob=innerWidth<760,gap=mob?46:78;
+      phone.style.transform='translateY('+(-e*(mob?40:60))+'px)';
+      layers.forEach(function(l){
+        var z=+l.dataset.z;
+        l.style.transform='rotateX('+(e*58)+'deg) rotateZ('+(-e*28)+'deg) translateZ('+(z*gap*e)+'px) translateY('+(-z*gap*.55*e)+'px)';
+      });
+    }
+    caps.forEach(function(c){c.classList.toggle('on',p>=+c.dataset.from&&p<+c.dataset.to)});
+  }
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll);
   onScroll();
 
-  (function loop(){
-    requestAnimationFrame(loop);
-    if(!ready||!v.duration)return;
-    current+=(target-current)*0.12;
-    if(Math.abs(target-current)<0.0005)return;
-    try{v.currentTime=current*(v.duration-0.06)}catch(e){}
-  })();
+  // Bölüm girişleri
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(el.parentElement.children.length>2?(i%4)*80:0)+'ms';io.observe(el)});
+
+  // Açık / kapalı (İstanbul saati: Pzt–Cmt 11:00–21:00, Pazar kapalı)
+  try{
+    var parts=new Intl.DateTimeFormat('en-GB',{weekday:'short',hour:'numeric',minute:'numeric',hour12:false,timeZone:'Europe/Istanbul'}).formatToParts(new Date()),o={};
+    parts.forEach(function(x){o[x.type]=x.value});
+    var m=(+o.hour%24)*60+(+o.minute),isOpen=o.weekday!=='Sun'&&m>=660&&m<1260,t=document.getElementById('openTxt');
+    if(isOpen){t.textContent="Şu an açık · 21:00'da kapanır"}
+    else{
+      var next=(o.weekday==='Sat'&&m>=1260)||o.weekday==='Sun'?'Pazartesi 11:00':(m<660?'Bugün 11:00':'Yarın 11:00');
+      t.textContent='Şu an kapalı · '+next+"'de açılır";
+      t.previousElementSibling.style.cssText='background:#ff453a;box-shadow:0 0 0 4px rgba(255,69,58,.2)';
+    }
+  }catch(e){}
 })();
 </script>
 </body>
