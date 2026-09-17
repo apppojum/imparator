@@ -39,7 +39,8 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;height:48px;background:rgba(0,
 .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;place-items:center}
 .stage{background:var(--hero)}
 .stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .6s;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent),linear-gradient(180deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent),linear-gradient(180deg,transparent,#000 6%,#000 94%,transparent);mask-composite:intersect}
-.stage video.ready{opacity:1}
+#hero3d{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1}
+.has3d .phone{display:none}
 .intro{position:absolute;top:13vh;left:0;right:0;text-align:center;padding:0 22px;z-index:3;will-change:opacity,transform}
 .eyebrow{color:var(--gold);font-size:clamp(15px,1.6vw,19px);font-weight:600;letter-spacing:.02em;margin-bottom:10px}
 .hero-title{font-size:clamp(46px,9vw,112px);line-height:1.02;letter-spacing:-.045em;font-weight:700;
@@ -188,7 +189,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <!-- HERO: kaydırmayla parçalara ayrılan telefon -->
 <div class="scrub" id="scrub">
   <div class="stage">
-    <video id="heroVid" src="telefon.mp4" muted playsinline preload="auto"></video>
+    <canvas id="hero3d" aria-hidden="true"></canvas>
 
     <div class="intro" id="intro">
       <div class="eyebrow">İmparator Cep Servis · Esenler</div>
@@ -344,20 +345,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <script>
 (function(){
-  var scrub=document.getElementById('scrub'),v=document.getElementById('heroVid'),
+  var scrub=document.getElementById('scrub'),
       phone=document.getElementById('phone'),intro=document.getElementById('intro'),
       hint=document.getElementById('hint'),caps=[].slice.call(document.querySelectorAll('.cap')),
       layers=[].slice.call(phone.querySelectorAll('.layer')),
-      useVideo=false,target=0,cur=0,raf=null;
-
-  // Video varsa onu kullan, yoksa katmanlı telefon animasyonu devrede kalır
-  v.addEventListener('loadedmetadata',function(){
-    if(v.duration>0){useVideo=true;v.classList.add('ready');phone.classList.add('hide');try{v.currentTime=.01}catch(e){}}
-  });
-  v.addEventListener('error',function(){useVideo=false});
-  // iOS: ilk dokunuşta videoyu "uyandır"
-  function unlock(){v.play().then(function(){v.pause()}).catch(function(){})}
-  window.addEventListener('touchstart',unlock,{once:true,passive:true});
+      target=0,cur=0,raf=null;
+  window.__heroP=0;
 
   function progress(){
     var r=scrub.getBoundingClientRect(),range=scrub.offsetHeight-innerHeight;
@@ -374,8 +367,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     intro.style.opacity=Math.max(0,1-p*5);
     intro.style.transform='translateY('+(-p*120)+'px) scale('+(1-p*.3)+')';
     hint.style.opacity=Math.max(0,1-p*10);
-    if(useVideo){try{v.currentTime=p*(v.duration-.06)}catch(e){}}
-    else{
+    window.__heroP=p;
+    if(!document.documentElement.classList.contains('has3d')){
       var e=Math.min(1,Math.max(0,(p-.08)/.6)); e=e<.5?2*e*e:1-Math.pow(-2*e+2,2)/2;
       var mob=innerWidth<760,gap=mob?46:78;
       phone.style.transform='translateY('+(-e*(mob?40:60))+'px)';
@@ -408,5 +401,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   }catch(e){}
 })();
 </script>
+<script type="module" src="hero3d.js"></script>
 </body>
 </html>
