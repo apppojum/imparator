@@ -58,10 +58,49 @@ details p{color:var(--ink-2);margin-top:10px;font-size:16px}
 footer{background:#000;color:#86868b;font-size:13px;padding:32px 0 110px}footer .wrap{display:grid;gap:10px}footer a{color:#d2d2d7}
 .bar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:30;display:none;gap:10px;padding:8px;border-radius:99px;background:rgba(28,28,30,.85);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
 .bar a{flex:1;text-align:center;padding:13px 0;border-radius:99px;font-weight:600;font-size:15px}.bar .c{background:#fff;color:#000}.bar .w{background:var(--wa);color:#000}
-@media(max-width:700px){ul.signs{grid-template-columns:1fr}.info{grid-template-columns:1fr}.bar{display:flex}}</style>
+@media(max-width:700px){ul.signs{grid-template-columns:1fr}.info{grid-template-columns:1fr}.bar{display:flex}}
+.cta{display:flex;align-items:center;gap:8px}
+.cta a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:8px 15px;border-radius:99px;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;white-space:nowrap}
+.cta a svg{width:15px;height:15px;flex:none}
+.cta a:active{transform:scale(.96)}
+.cta .wa{background:var(--wa);color:#07301a}
+.cta .wa:hover{background:#2ee472;box-shadow:0 6px 22px rgba(37,211,102,.35)}
+.cta .call{color:#fff;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.06)}
+.cta .call:hover{border-color:var(--gold);color:var(--gold);background:rgba(200,168,105,.1)}
+@media(max-width:520px){.cta a{padding:8px 12px;font-size:12.5px}.cta .call .t{display:none}}
+article{padding:56px 0 20px}
+article h2{font-size:clamp(23px,3.2vw,31px);margin:44px 0 14px}
+article h3{font-size:clamp(19px,2.4vw,22px);letter-spacing:-.02em;margin:30px 0 10px}
+article p{font-size:17.5px;line-height:1.65;margin-bottom:16px;color:#2b2b2f}
+article ul,article ol{margin:0 0 18px 22px}
+article li{font-size:17.5px;line-height:1.6;margin-bottom:9px;color:#2b2b2f}
+article strong{color:var(--ink)}
+article table{border-collapse:collapse;width:100%;margin:8px 0 22px;font-size:16px}
+article th,article td{border-bottom:1px solid #d2d2d7;padding:11px 10px;text-align:left;vertical-align:top}
+article th{font-size:13px;color:var(--ink-2);font-weight:600}
+.note{background:var(--light);border-left:3px solid var(--gold);border-radius:0 14px 14px 0;padding:18px 20px;margin:22px 0}
+.note p{margin:0;font-size:16.5px}
+.endcta{background:#000;color:#fff;border-radius:24px;padding:34px;margin:44px 0 10px}
+.endcta h3{color:#fff;margin:0 0 8px;font-size:23px}
+.endcta p{color:#a1a1a6;margin-bottom:20px;font-size:17px}
+.endcta .btns{display:flex;gap:12px;flex-wrap:wrap}
+.endcta .btn{padding:13px 22px;border-radius:99px;font-weight:600;font-size:16px}
+.postmeta{color:var(--ink-2);font-size:14px;margin-top:14px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.card{background:#fff;border-radius:22px;padding:28px;display:flex;flex-direction:column}
+.card .k{color:var(--gold);font-size:13px;font-weight:600}
+.card h2{font-size:23px;letter-spacing:-.025em;margin:8px 0 10px;line-height:1.2}
+.card p{color:var(--ink-2);font-size:16px;margin-bottom:18px}
+.card .go{margin-top:auto;color:#0066cc;font-size:15.5px;font-weight:500}
+.card:hover .go{text-decoration:underline}
+@media(max-width:700px){.cards{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 12H5L3 7z"/></svg>İmparator Cep Servis</a><a class="pill" href="tel:+905331489434">Ara</a></div></header>
+<header><div class="wrap nav"><a class="brand" href="/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 12H5L3 7z"/></svg>İmparator Cep Servis</a><div class="cta">
+      <a class="wa" href="https://wa.me/905331489434?text=Merhaba%2C%20telefonum%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp'tan yaz"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.03c-.25.69-1.44 1.32-1.99 1.37-.53.05-1.02.24-3.45-.72-2.9-1.14-4.74-4.11-4.88-4.3-.14-.19-1.16-1.54-1.16-2.94s.73-2.09.99-2.37c.26-.29.57-.36.76-.36l.54.01c.17.01.41-.7.64.49.25.6.83 2.07.9 2.22.07.15.12.32.02.51-.1.19-.15.31-.29.48l-.44.51c-.14.14-.29.3-.12.58.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.64-.14.26.09 1.65.78 1.93.92.29.14.48.21.55.33.07.12.07.69-.17 1.37z"/></svg>WhatsApp</a>
+      <a class="call" href="tel:+905331489434" aria-label="Telefonla ara"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg><span class="t">0533 148 94 34</span></a>
+    </div></div></header>
 <main>
 <div class="hero"><div class="wrap">
   <nav class="crumb" aria-label="Sayfa yolu"><a href="/">Ana sayfa</a> › Anakart Onarımı</nav>
@@ -79,7 +118,7 @@ footer{background:#000;color:#86868b;font-size:13px;padding:32px 0 110px}footer 
 </div></section>
 <section class="alt"><div class="wrap"><h2>Diğer hizmetlerimiz</h2><div class="others"><a href="/ekran-degisimi">Ekran Değişimi</a><a href="/batarya-degisimi">Batarya Değişimi</a><a href="/sarj-soketi-degisimi">Şarj Soketi Değişimi</a><a href="/kamera-degisimi">Kamera Değişimi</a><a href="/yazilim-veri-kurtarma">Yazılım ve Veri Kurtarma</a></div></div></section>
 </main>
-<footer><div class="wrap"><span>© 2026 İmparator Cep Servis · Esenler / İstanbul</span><span>İmparator Cep Servis bağımsız bir teknik servistir; Apple, Samsung, Xiaomi ve diğer markaların yetkili servisi değildir. Marka adları yalnızca uyumluluğu belirtmek için kullanılmıştır.</span><a href="/">Ana sayfaya dön</a></div></footer>
+<footer><div class="wrap"><nav style="display:flex;flex-wrap:wrap;gap:8px 18px"><a href="/blog" style="color:#d2d2d7">Blog</a><a href="/blog" style="color:#d2d2d7">Blog</a></nav><span>© 2026 İmparator Cep Servis · Esenler / İstanbul</span><span>İmparator Cep Servis bağımsız bir teknik servistir; Apple, Samsung, Xiaomi ve diğer markaların yetkili servisi değildir. Marka adları yalnızca uyumluluğu belirtmek için kullanılmıştır.</span><a href="/">Ana sayfaya dön</a></div></footer>
 <div class="bar"><a class="c" href="tel:+905331489434">Ara</a><a class="w" href="https://wa.me/905331489434" target="_blank" rel="noopener">WhatsApp</a></div>
 </body>
 </html>
